@@ -1,6 +1,8 @@
-package com.kodilla.testing;
+package com.kodilla.testing.calculator;
 
 import com.kodilla.testing.calculator.Calculator;
+
+import java.util.HashMap;
 
 public class TestingMainCalc {
     public static void main(String[] args){
@@ -22,5 +24,11 @@ public class TestingMainCalc {
         } else {
             System.out.println("Result for substraction: " + result1 + " Error");
         }
+
+        HashMap<String, String> student = new HashMap<>();
+        student.put("uczen1","uczen1");
+        student.put("uczen1","uczen2");
+        student.put(null,"uczen1");
+        student.put("uczen4","uczen1");
     }
 }
