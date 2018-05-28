@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalculateStatistic {
-    Statistics statistics;
+    private Statistics statistics;
 
     public CalculateStatistic(Statistics statistics) {
         this.statistics = statistics;
