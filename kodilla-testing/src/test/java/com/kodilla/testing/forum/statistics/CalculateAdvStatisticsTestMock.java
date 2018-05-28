@@ -49,7 +49,6 @@ public class CalculateAdvStatisticsTestMock {
         //When
         double numberUsers100 = calculateUsers100.getAvgCommentOfUser();
 
-
         //Then
         Assert.assertEquals(2, numberUsers100, 0.01);
     }
@@ -104,7 +103,6 @@ public class CalculateAdvStatisticsTestMock {
 
         //Then
         Assert.assertEquals(0,comments, 0.01);
-
     }
     @Test
     public void TestCalcPostsOf0 (){
@@ -120,7 +118,6 @@ public class CalculateAdvStatisticsTestMock {
         stPosts100.calculateAdvStatistics(stPostsOf0);
         //When
         double post = stPosts100.getAvgPostOfUser();
-
 
         //Then
         Assert.assertEquals(0, post,0.01);
@@ -141,7 +138,6 @@ public class CalculateAdvStatisticsTestMock {
         posts1000.calculateAdvStatistics(stPostsOf1000);
         //When
         double posts = posts1000.getAvgPostOfUser();
-
 
         //Then
         Assert.assertEquals(0.05,posts,0.01);
