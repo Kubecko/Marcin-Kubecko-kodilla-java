@@ -14,7 +14,7 @@ import static org.mockito.Mockito.when;
 public class CalculateAdvStatisticsTestMock {
 
     @Test
-    public void TestCalcUser0() {
+    public void testCalcUser0() {
         //Given
         Statistics statisticMock = mock(Statistics.class);
         List<String> listUsers0 = new ArrayList<>();
@@ -32,7 +32,7 @@ public class CalculateAdvStatisticsTestMock {
         Assert.assertEquals(0, numberUsersOfZero, 0.01);
     }
     @Test
-    public void TestCalcUser100() {
+    public void testCalcUser100() {
         //Given
         Statistics statisticUser100Mock = mock(Statistics.class);
         List<String> listUser100 = new ArrayList<>();
@@ -53,7 +53,7 @@ public class CalculateAdvStatisticsTestMock {
         Assert.assertEquals(2, numberUsers100, 0.01);
     }
     @Test
-    public void TestCalcCommentMorePosts(){
+    public void testCalcCommentMorePosts(){
         //Given
         Statistics statisticCommOfPostsMock = mock(Statistics.class);
         int commentCount = 200;
@@ -71,7 +71,7 @@ public class CalculateAdvStatisticsTestMock {
         Assert.assertEquals(0.2,numberCommOfPosts,0.01);
     }
     @Test
-    public void TestCalcPostsMoreComment(){
+    public void testCalcPostsMoreComment(){
         //Given
         Statistics stPostOfComment = mock(Statistics.class);
         int postsCount = 1000;
@@ -89,7 +89,7 @@ public class CalculateAdvStatisticsTestMock {
         Assert.assertEquals(20, postOfComment, 0.01);
     }
     @Test
-    public void TestCalcCommentOf0(){
+    public void testCalcCommentOf0(){
         //Given
         Statistics stCommentOf0 = mock(Statistics.class);
         int commentOf0 = 0;
@@ -105,7 +105,7 @@ public class CalculateAdvStatisticsTestMock {
         Assert.assertEquals(0,comments, 0.01);
     }
     @Test
-    public void TestCalcPostsOf0 (){
+    public void testCalcPostsOf0 (){
         Statistics stPostsOf0 = mock(Statistics.class);
         List<String> users = new ArrayList<>();
         users.add("Martin # ");
@@ -123,7 +123,7 @@ public class CalculateAdvStatisticsTestMock {
         Assert.assertEquals(0, post,0.01);
     }
     @Test
-    public void TestCalcPostsOf1000 (){
+    public void testCalcPostsOf1000 (){
         Statistics stPostsOf1000 = mock(Statistics.class);
         List<String> users2 = new ArrayList<>();
         for (int n=0; n < 50; n++){
