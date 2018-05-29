@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.collections1.Collections1Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-29T14:31:17" hostname="Bartoszek" time="0.006">
+  <properties/>
+  <testcase name="testOddNumbersExterminatorEmptyList" classname="com.kodilla.testing.collections1.Collections1Test" time="0.005"/>
+  <testcase name="testOddNumbersExterminatorNormalList" classname="com.kodilla.testing.collections1.Collections1Test" time="0.0"/>
+  <system-out><![CDATA[The List begin: 
+Testing: []
+The List end: 
+The List begin: 
+Testing: [2, 4, 6, 8, 10]
+The List end: 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
