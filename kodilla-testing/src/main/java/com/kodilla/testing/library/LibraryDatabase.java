@@ -8,7 +8,7 @@ public interface LibraryDatabase {
 
     List<Book> listBooksInHandsOf(LibraryUser libraryUser);
 
-    boolean rentABokk(LibraryUser libraryUser, Book book);
+    boolean rentABook(LibraryUser libraryUser, Book book);
 
     int returnBooks(LibraryUser libraryUser);
 }
