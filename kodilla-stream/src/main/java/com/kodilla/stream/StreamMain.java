@@ -1,7 +1,33 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.com.kodilla.stream.lambda.ExpressionExecutor;
+import com.kodilla.stream.com.kodilla.stream.reference.FunctionalCalculator;
+
 public class StreamMain {
     public static void main(String[] args) {
-        System.out.println("Welcome to module 7 - Stream");
+        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
+
+        expressionExecutor.executeExpression(10 ,5, (a,b) -> a-b);
+        expressionExecutor.executeExpression(10,5, (a,b) -> a+b);
+        expressionExecutor.executeExpression(10,5, (a,b) -> a*b);
+        expressionExecutor.executeExpression(10,5, (a,b) -> a/b);
+
+        System.out.println();
+
+        expressionExecutor.executeExpression(3,4, FunctionalCalculator::multiplyAByB);
+        expressionExecutor.executeExpression(3,4, FunctionalCalculator::addAToB);
+        expressionExecutor.executeExpression(7,4, FunctionalCalculator::subBFromA);
+        expressionExecutor.executeExpression(3,4, FunctionalCalculator::divideAByB);
+
+        System.out.println();
+
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beutify("Ala ma Kota", (textBeauty) -> "Kot ma Ale");
+        poemBeautifier.beutify("Programowanie nie jest takie trudne",(textBeauty) -> "Programming is " + "The Best");
+        poemBeautifier.beutify("ALA MA KOTA",(textBeauty) -> textBeauty.toUpperCase());
+        poemBeautifier.beutify("ala ma kota",(textBeauty) -> textBeauty.toLowerCase());
+        poemBeautifier.beutify("ala ma kota",(textBeauty) -> textBeauty.substring(7));
+        poemBeautifier.beutify("ala ma kota",(textBeauty) -> textBeauty.concat(" Tom'a"));
     }
 }
