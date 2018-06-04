@@ -22,6 +22,7 @@ public final class ForumUser {
     public void addFriend(ForumUser user){
         friends.add(user);
     }
+
     public boolean removeFriend(ForumUser user){
         return friends.remove(user);
     }
@@ -37,6 +38,7 @@ public final class ForumUser {
     public String getLocation() {
         return location;
     }
+
     public Set<ForumUser> getFriends() {
         return friends;
     }
@@ -69,11 +71,5 @@ public final class ForumUser {
                 .map(ForumUser::getLocation)
                 .collect(Collectors.toSet());
     }
-    public Set<String> getLocationsOfFriendsOfFriends(){
-        return friends.stream()
-                .flatMap(user -> user.getFriends().stream())
-                .filter(user -> user != this)
-                .map(ForumUser::getLocation)
-                .collect(Collectors.toSet());
-    }
+
 }
