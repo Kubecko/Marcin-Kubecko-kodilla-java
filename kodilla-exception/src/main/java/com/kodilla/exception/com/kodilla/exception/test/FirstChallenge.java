@@ -1,12 +1,9 @@
 package com.kodilla.exception.com.kodilla.exception.test;
 
-import java.io.IOException;
-import java.util.stream.Stream;
-
 public class FirstChallenge {
     public double divide(double a, double b) throws ArithmeticException {
         try {
-            if (b == 0){}
+            if (b == 0){throw new ArithmeticException();}
         } catch (ArithmeticException e) {
             System.out.println("Oh no! Something went wrong!" + e);
         } finally {
