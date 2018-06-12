@@ -5,8 +5,10 @@ public class ExceptionHandling {
         SecondChallenge secondChallenge = new SecondChallenge();
         try {
             secondChallenge.probablyIWillThrowException(2,3);
-        } catch (FileNumberException e){
+        } catch (Exception e){
             System.out.println("Problem");
+        } finally {
+            System.out.println("I am gonna be here.... always!");
         }
     }
 }
