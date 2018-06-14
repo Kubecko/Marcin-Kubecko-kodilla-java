@@ -1,11 +1,9 @@
 package com.kodilla.good.patterns.challenges;
 
 public class ProcessorToSell {
-    private OrderService orderService;
     private SendMessage sendMessage;
 
-    public ProcessorToSell(final OrderService orderService, final SendMessage sendMessage) {
-        this.orderService = orderService;
+    public ProcessorToSell(final SendMessage sendMessage) {
         this.sendMessage = sendMessage;
     }
 
