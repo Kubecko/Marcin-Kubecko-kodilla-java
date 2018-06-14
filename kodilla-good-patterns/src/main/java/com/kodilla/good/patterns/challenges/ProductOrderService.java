@@ -5,7 +5,7 @@ public class ProductOrderService {
         OrderUser orderUser = new OrderUser();
         OrderRequest orderRequest = orderUser.retrieve();
 
-        ProcessorToSell processorToSell = new ProcessorToSell(new AGDOrderService(), new SendMessageEmail());
+        ProcessorToSell processorToSell = new ProcessorToSell(new SendMessageEmail());
         processorToSell.process(orderRequest);
     }
 }

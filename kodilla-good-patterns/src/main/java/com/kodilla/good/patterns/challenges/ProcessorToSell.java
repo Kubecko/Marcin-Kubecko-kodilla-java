@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.challenges;
 
 public class ProcessorToSell {
+
     private SendMessage sendMessage;
 
     public ProcessorToSell(final SendMessage sendMessage) {
