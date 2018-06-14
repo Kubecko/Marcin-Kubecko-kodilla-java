@@ -6,7 +6,7 @@ public class OrderUser {
 
         UserAllegro userAllegro = new UserAllegro("Marcin", "MKubecko@gmail.com");
 
-        ProductWithAllegro productWithAllegro = new ProductWithAllegro("Washer", 7);
+        ProductWithAllegro productWithAllegro = new ProductWithAllegro("TV", 2);
 
         return new OrderRequest(userAllegro, productWithAllegro);
     }
