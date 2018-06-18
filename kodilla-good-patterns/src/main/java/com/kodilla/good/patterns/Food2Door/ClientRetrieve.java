@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.Food2Door;
 
-public class OrderClient {
+public class ClientRetrieve {
 
     public OrderRequest retrieve (){
 

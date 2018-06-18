@@ -13,7 +13,6 @@ public class ProcessToOrder {
             boolean order = processShop.process(orderRequest.getProductOrder());
             if (order) {
                 sendMessage.sendMessage(orderRequest.getClientCustomers());
-                processShop.process(orderRequest.getProductOrder());
             } else {
                 sendMessage.messageNotSend(orderRequest.getClientCustomers());
             }
