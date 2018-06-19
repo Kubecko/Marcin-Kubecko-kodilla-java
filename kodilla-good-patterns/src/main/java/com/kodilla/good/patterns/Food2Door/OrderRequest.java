@@ -5,10 +5,13 @@ public final class OrderRequest {
     private final Product productOrder;
 
 
+
     public OrderRequest(final Client clientCustomers, final Product productOrder) {
         this.clientCustomers = clientCustomers;
         this.productOrder = productOrder;
     }
+
+
 
     public Client getClientCustomers() {
         return clientCustomers;

@@ -5,7 +5,7 @@ public class ClientRetrieve {
     public OrderRequest retrieve (){
 
         Client client = new Client("Marcin", "MKubecko@gmail.com");
-        Product product = new Product("Roll", 2);
+        Product product = new Product("Creatina4", 2);
 
         return new OrderRequest(client, product);
     }

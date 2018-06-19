@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.Food2Door;
 
+import static com.kodilla.good.patterns.Food2Door.ShopRetriever.*;
+
 public class ProcessToOrder {
     private Courier sendMessage;
 
@@ -9,13 +11,19 @@ public class ProcessToOrder {
 
         ShopRetriever shopRetriever = new ShopRetriever();
         final Process processShop = shopRetriever.find(orderRequest.getProductOrder().getProductName());
+
         if (processShop != null) {
+            System.out.println(orderRequest.getProductOrder().getProductName());
             boolean order = processShop.process(orderRequest.getProductOrder());
             if (order) {
+
                 sendMessage.sendMessage(orderRequest.getClientCustomers());
             } else {
                 sendMessage.messageNotSend(orderRequest.getClientCustomers());
             }
-        } else System.out.println("No proper store.");
+        } else {
+            System.out.println(orderRequest.getProductOrder().getProductName());
+            addProducer("Some Product", new ExtraFoodShop());
+        }
     }
 }

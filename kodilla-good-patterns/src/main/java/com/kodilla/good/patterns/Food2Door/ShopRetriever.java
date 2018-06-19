@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class ShopRetriever {
     private static Map<String, Process> shops = new HashMap<>();
+
     static {
         shops.put("Omlette", new ExtraFoodShop());
         shops.put("Chicken", new ExtraFoodShop());
@@ -15,11 +16,21 @@ public class ShopRetriever {
         shops.put("Bread", new GlutenFreeShop());
         shops.put("Roll", new GlutenFreeShop());
         shops.put("Cereals", new GlutenFreeShop());
+        shops.put("Coconut", new SupleShop());
+        shops.put("Ostrovit", new SupleShop());
+        shops.put("Creatina", new SupleShop());
+        System.out.println(shops.size());
     }
-    public Process find(String product){
-        if(shops.containsKey(product)) {
+
+
+    public Process find(String product) {
+        if (shops.containsKey(product)) {
             return shops.get(product);
         }
         return null;
+    }
+    public static void addProducer(String key, Process value){
+        shops.put(key,value);
+        System.out.println(shops.size());
     }
 }
