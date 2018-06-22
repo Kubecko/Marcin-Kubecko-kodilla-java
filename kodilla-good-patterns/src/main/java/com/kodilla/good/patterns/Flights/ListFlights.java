@@ -1,38 +1,49 @@
 package com.kodilla.good.patterns.Flights;
 
-import java.util.HashMap;
-import java.util.Map;
 
-public class ListFlights implements Process{
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-        public static Map<String, String> listFlights = new HashMap<>();
-        static {
-            listFlights.put("Barcelona", "Katowice");
-            listFlights.put("Chicago", "Katowice");
-            listFlights.put("New York", "Krakow");
-            listFlights.put("Rome", "Katowice");
-            listFlights.put("Katowice", "Brazil");
-            listFlights.put("San Francisco", "Krakow");
-            listFlights.put("Florida", "Krakow");
-            listFlights.put("Canada", "Warsaw");
-            listFlights.put("Warsaw", "Krakow");
-            listFlights.put("Krakow", "Katowice");
+public class ListFlights {
+
+    private static Set<Flights> listFlights = new HashSet<>();
+
+    static {
+        listFlights.add(new Flights("Barcelona", "Canada"));
+        listFlights.add(new Flights("Chicago", "Katowice"));
+        listFlights.add(new Flights("New York", "Krakow"));
+        listFlights.add(new Flights("Rome", "Canada"));
+        listFlights.add(new Flights("Katowice", "Brazil"));
+        listFlights.add(new Flights("San Francisco", "Canada"));
+        listFlights.add(new Flights("Barcelona", "Krakow"));
+        listFlights.add(new Flights("Canada", "Warsaw"));
+        listFlights.add(new Flights("Warsaw", "Canada"));
+        listFlights.add(new Flights("Krakow", "Warsaw"));
     }
 
-    public String find (String fly){
-        if(listFlights.containsKey(fly)){
-            return listFlights.get(fly);
-        }
-        return null;
+    public Set<Flights> findFrom(String fly) {
+        return listFlights.stream()
+                .filter(flys -> flys.getDeparture().equals(fly))
+                .collect(Collectors.toSet());
     }
-
-    @Override
-    public boolean process(Airport airport) {
-            if(listFlights.containsKey(airport.getDeparture())){
-                listFlights.get(airport.getDeparture());
-                return true;
-            }
-        return false;
+    public Set<Flights> findTo(String fly){
+        return listFlights.stream()
+                .filter(flys -> flys.getArrival().equals(fly))
+                .collect(Collectors.toSet());
+    }
+    public Set<Flights> findFlyBeetwen (String flyDepart, String flyArr) {
+        Set<Flights> depart = listFlights.stream()
+                .filter(fly -> fly.getDeparture().equals(flyDepart))
+                .collect(Collectors.toSet());
+        Set<Flights> arrival = listFlights.stream()
+                .filter(fly -> fly.getArrival().equals(flyArr))
+                .collect(Collectors.toSet());
+        return arrival.stream()
+              .filter(fly -> fly.getArrival().equals(flyArr))
+                .collect(Collectors.toSet());
     }
 }
+
+
 
