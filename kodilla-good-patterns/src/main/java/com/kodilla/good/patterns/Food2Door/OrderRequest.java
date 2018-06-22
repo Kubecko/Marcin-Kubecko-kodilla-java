@@ -11,8 +11,6 @@ public final class OrderRequest {
         this.productOrder = productOrder;
     }
 
-
-
     public Client getClientCustomers() {
         return clientCustomers;
     }
