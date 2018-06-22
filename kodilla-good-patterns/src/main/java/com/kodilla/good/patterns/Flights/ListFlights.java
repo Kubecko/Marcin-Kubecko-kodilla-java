@@ -40,7 +40,7 @@ public class ListFlights {
                 .filter(fly -> fly.getArrival().equals(flyArr))
                 .collect(Collectors.toSet());
         return arrival.stream()
-              .filter(fly -> fly.getArrival().equals(flyArr))
+                .filter(fly -> fly.getArrival().equals(flyArr))
                 .collect(Collectors.toSet());
     }
 }
