@@ -7,6 +7,6 @@ public class FlightResult {
 
         System.out.println(listFlights.findTo("Canada")+ "\n");
 
-        System.out.println(listFlights.findFlyBeetwen("Barcelona","Warsaw"));
+        listFlights.findFlyBeetwen("Barcelona","Warsaw");
     }
 }

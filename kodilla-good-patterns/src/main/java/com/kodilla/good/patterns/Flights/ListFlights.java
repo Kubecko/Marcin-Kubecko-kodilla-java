@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.Flights;
 
+import java.awt.*;
+import java.sql.SQLOutput;
 import java.util.*;
 
 import static java.util.stream.Collectors.toSet;
@@ -13,7 +15,7 @@ public class ListFlights {
         listFlights.add(new Flights("Chicago", "Katowice"));
         listFlights.add(new Flights("New York", "Krakow"));
         listFlights.add(new Flights("Rome", "Canada"));
-        listFlights.add(new Flights("Katowice", "Brazil"));
+        listFlights.add(new Flights("Barcelona", "Brazil"));
         listFlights.add(new Flights("San Francisco", "Canada"));
         listFlights.add(new Flights("Barcelona", "Krakow"));
         listFlights.add(new Flights("Canada", "Warsaw"));
@@ -33,7 +35,7 @@ public class ListFlights {
                 .collect(toSet());
     }
 
-    public Set<Flights> findFlyBeetwen(String flyDepart, String flyArr) {
+    public void findFlyBeetwen(String flyDepart, String flyArr) {
         Set<Flights> depart = listFlights.stream()
                 .filter(fly -> fly.getDeparture().equals(flyDepart))
                 .collect(toSet());
@@ -41,12 +43,14 @@ public class ListFlights {
                 .filter(fly -> fly.getArrival().equals(flyArr))
                 .collect(toSet());
 
-        Set<Flights> listOfResult = new HashSet<>();
-        listOfResult.addAll(depart);
-        System.out.println();
-        listOfResult.addAll(arrival);
-
-        return listOfResult;
+        for (Flights result : depart) {
+            for(Flights resultOne : arrival){
+                if(result.getArrival().equals(resultOne.getDeparture())) {
+                    System.out.println(resultOne);
+                    System.out.println(result);
+               }
+            }
+        }
     }
 }
 
