@@ -1,9 +1,8 @@
 package com.kodilla.good.patterns.Flights;
 
+import java.util.*;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toSet;
 
 public class ListFlights {
 
@@ -25,25 +24,32 @@ public class ListFlights {
     public Set<Flights> findFrom(String fly) {
         return listFlights.stream()
                 .filter(flys -> flys.getDeparture().equals(fly))
-                .collect(Collectors.toSet());
+                .collect(toSet());
     }
-    public Set<Flights> findTo(String fly){
+
+    public Set<Flights> findTo(String fly) {
         return listFlights.stream()
                 .filter(flys -> flys.getArrival().equals(fly))
-                .collect(Collectors.toSet());
+                .collect(toSet());
     }
-    public Set<Flights> findFlyBeetwen (String flyDepart, String flyArr) {
+
+    public Set<Flights> findFlyBeetwen(String flyDepart, String flyArr) {
         Set<Flights> depart = listFlights.stream()
                 .filter(fly -> fly.getDeparture().equals(flyDepart))
-                .collect(Collectors.toSet());
+                .collect(toSet());
         Set<Flights> arrival = listFlights.stream()
                 .filter(fly -> fly.getArrival().equals(flyArr))
-                .collect(Collectors.toSet());
-        return arrival.stream()
-                .filter(fly -> fly.getArrival().equals(flyArr))
-                .collect(Collectors.toSet());
+                .collect(toSet());
+
+        Set<Flights> listOfResult = new HashSet<>();
+        listOfResult.addAll(depart);
+        System.out.println();
+        listOfResult.addAll(arrival);
+
+        return listOfResult;
     }
 }
+
 
 
 
