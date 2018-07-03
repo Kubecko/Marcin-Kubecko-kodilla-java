@@ -5,18 +5,17 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class LoggerTestSuite {
-    private static Logger logger = new Logger();
+
     @BeforeClass
     public static void testMethogLog(){
-        logger = new Logger();
-        logger.log("logging of performed operations");
+        Logger.getInstance().log("logging of performed operations");
     }
 
     @Test
     public void getLastLog(){
         //Given
         //When
-        String nameLog = logger.getLastLog();
+        String nameLog = Logger.getInstance().getLastLog();
         // Then
         Assert.assertEquals("logging of performed operations",nameLog);
     }
