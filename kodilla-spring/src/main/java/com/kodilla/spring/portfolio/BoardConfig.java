@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
+import java.util.List;
+
 @Configuration
 public class BoardConfig {
     @Autowired
@@ -18,7 +20,5 @@ public class BoardConfig {
     }
     @Bean(name = "ToDoList")
     @Scope("prototype")
-    public TaskList getDoList(){
-        return new TaskList(taskList.tasks);
-    }
+    public TaskList getDoList(){ return new TaskList(taskList.tasks.add("write this program")); }
 }
