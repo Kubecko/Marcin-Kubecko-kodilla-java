@@ -13,7 +13,7 @@ public final class ShoppingTask implements Task{
 
     @Override
     public String executeTask() {
-       return  taskName +" " + whatToBuy +" " + quantity;
+       return  taskName +" " + whatToBuy + " " + quantity;
     }
 
     @Override
@@ -23,6 +23,11 @@ public final class ShoppingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+        boolean taskExecuted = Boolean.parseBoolean(taskName +" " + whatToBuy + " " + quantity);
+        if(taskExecuted == equals(Task.class)){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

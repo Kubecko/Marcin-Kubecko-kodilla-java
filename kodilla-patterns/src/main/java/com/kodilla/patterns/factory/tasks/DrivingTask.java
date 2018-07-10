@@ -23,6 +23,12 @@ public final class DrivingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+
+        boolean taskExecuted = Boolean.parseBoolean(taskName + " " + where + " " + using);
+        if(taskExecuted == equals(Task.class)){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

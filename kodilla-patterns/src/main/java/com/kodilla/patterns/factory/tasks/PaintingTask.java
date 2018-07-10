@@ -24,6 +24,12 @@ public final class PaintingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+
+        boolean taskExecuted = Boolean.parseBoolean(taskName + " " + color + " " + whatToPaint);
+        if(taskExecuted == equals(Task.class)){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

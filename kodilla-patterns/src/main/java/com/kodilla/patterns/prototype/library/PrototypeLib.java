@@ -1,4 +1,4 @@
-package com.kodilla.patterns.library;
+package com.kodilla.patterns.prototype.library;
 
 public class PrototypeLib<T> implements Cloneable {
 

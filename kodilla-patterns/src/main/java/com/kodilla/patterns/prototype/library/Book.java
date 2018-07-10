@@ -1,8 +1,9 @@
-package com.kodilla.patterns.library;
+package com.kodilla.patterns.prototype.library;
 
 import java.time.LocalDate;
 
-public class Book {final String title;
+public class Book {
+    final String title;
     final String author;
     final LocalDate publicationDate;
 
