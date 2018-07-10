@@ -1,9 +1,8 @@
 package com.kodilla.spring.calculator;
 
+import org.springframework.stereotype.Component;
 
-import org.springframework.stereotype.Repository;
-
-@Repository
+@Component
 public class Display {
 
     public double displayValue(double val){
