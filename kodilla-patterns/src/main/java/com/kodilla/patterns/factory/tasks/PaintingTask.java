@@ -4,6 +4,7 @@ public final class PaintingTask implements Task{
     final String taskName;
     final String color;
     final String whatToPaint;
+    private boolean executed;
 
     public PaintingTask(final String taskName, final String color, final String whatToPaint) {
         this.taskName = taskName;
@@ -12,9 +13,8 @@ public final class PaintingTask implements Task{
     }
 
     @Override
-    public String executeTask() {
-        return taskName + " " + color + " " + whatToPaint;
-       // System.out.println(taskName + color + whatToPaint);
+    public void executeTask() {
+        executed = true;
     }
 
     @Override
@@ -24,9 +24,7 @@ public final class PaintingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-
-        boolean taskExecuted = Boolean.parseBoolean(taskName + " " + color + " " + whatToPaint);
-        if(taskExecuted == equals(Task.class)){
+        if(executed == equals(Task.class)){
             return true;
         } else {
             return false;

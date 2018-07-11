@@ -4,6 +4,7 @@ public final class DrivingTask implements Task{
     final String taskName;
     final String where;
     final String using;
+    private boolean executed;
 
     public DrivingTask(final String taskName, final String where, final String using) {
         this.taskName = taskName;
@@ -12,8 +13,8 @@ public final class DrivingTask implements Task{
     }
 
     @Override
-    public String executeTask() {
-        return taskName + " " + where + " " + using;
+    public void executeTask() {
+        executed = true;
     }
 
     @Override
@@ -23,9 +24,7 @@ public final class DrivingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-
-        boolean taskExecuted = Boolean.parseBoolean(taskName + " " + where + " " + using);
-        if(taskExecuted == equals(Task.class)){
+        if(executed == equals(Task.class)){
             return true;
         } else {
             return false;
