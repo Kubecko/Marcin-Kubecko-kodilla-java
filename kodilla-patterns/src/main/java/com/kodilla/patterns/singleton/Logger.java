@@ -22,7 +22,6 @@ public class Logger{
                 if (logger == null) {
                     logger = new Logger();
                 }
-
             }
         }
             return logger;
