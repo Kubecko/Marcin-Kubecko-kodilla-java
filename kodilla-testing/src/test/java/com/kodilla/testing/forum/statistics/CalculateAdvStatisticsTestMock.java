@@ -2,8 +2,6 @@ package com.kodilla.testing.forum.statistics;
 
 import org.junit.Assert;
 import org.junit.Test;
-import com.kodilla.testing.forum.statistics.CalculateStatistic;
-import com.kodilla.testing.forum.statistics.Statistics;
 
 import java.util.ArrayList;
 import java.util.List;

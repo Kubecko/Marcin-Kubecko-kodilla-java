@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-05-29T14:31:17" hostname="Bartoszek" time="0.144">
+<testsuite name="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-07-17T10:41:17" hostname="Bartoszek" time="0.169">
   <properties/>
-  <testcase name="testCalcCommentMorePosts" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.138"/>
-  <testcase name="testCalcUser0" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.001"/>
-  <testcase name="testCalcCommentOf0" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.0"/>
-  <testcase name="testCalcPostsMoreComment" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.0"/>
-  <testcase name="testCalcUser100" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.0"/>
-  <testcase name="testCalcPostsOf0" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.001"/>
-  <testcase name="testCalcPostsOf1000" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.001"/>
+  <testcase name="testCalcCommentMorePosts" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.163"/>
+  <testcase name="testCalcUser0" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.002"/>
+  <testcase name="testCalcCommentOf0" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.001"/>
+  <testcase name="testCalcPostsMoreComment" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.001"/>
+  <testcase name="testCalcUser100" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.001"/>
+  <testcase name="testCalcPostsOf0" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.0"/>
+  <testcase name="testCalcPostsOf1000" classname="com.kodilla.testing.forum.statistics.CalculateAdvStatisticsTestMock" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.collections1.Collections1Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-29T14:31:17" hostname="Bartoszek" time="0.006">
+<testsuite name="com.kodilla.testing.collections1.Collections1Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-07-17T10:41:16" hostname="Bartoszek" time="0.011">
   <properties/>
-  <testcase name="testOddNumbersExterminatorEmptyList" classname="com.kodilla.testing.collections1.Collections1Test" time="0.005"/>
-  <testcase name="testOddNumbersExterminatorNormalList" classname="com.kodilla.testing.collections1.Collections1Test" time="0.0"/>
+  <testcase name="testOddNumbersExterminatorEmptyList" classname="com.kodilla.testing.collections1.Collections1Test" time="0.01"/>
+  <testcase name="testOddNumbersExterminatorNormalList" classname="com.kodilla.testing.collections1.Collections1Test" time="0.001"/>
   <system-out><![CDATA[The List begin: 
 Testing: []
 The List end: 
