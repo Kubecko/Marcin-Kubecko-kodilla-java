@@ -17,12 +17,14 @@ import java.math.BigDecimal;
 public class InvoiceDaoTestSuite {
     @Autowired
     InvoiceDao invoiceDao;
+    @Autowired
+    ProductDao productDao;
     @Test
     public void testInvoiceDaoSave(){
         //Given
         Invoice invoice = new Invoice("Invoice for Bike 12354");
-
         Product product = new Product("Bike");
+
         Item item = new Item(new BigDecimal(150), 1, new BigDecimal(150));
         Item item1 = new Item(new BigDecimal(55),5, new BigDecimal(275));
         Item item2 = new Item(new BigDecimal(15),8, new BigDecimal(120));
@@ -34,9 +36,13 @@ public class InvoiceDaoTestSuite {
         //When
         invoiceDao.save(invoice);
         int id = invoice.getId();
+        productDao.save(product);
+        int idP = product.getId();
         //Then
         Assert.assertNotEquals(0, id);
+        Assert.assertNotEquals(0,idP);
         //CleanUp
         invoiceDao.delete(id);
+        productDao.delete(idP);
     }
 }
