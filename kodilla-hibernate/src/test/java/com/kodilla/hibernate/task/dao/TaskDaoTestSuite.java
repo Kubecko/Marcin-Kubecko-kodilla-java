@@ -63,8 +63,8 @@ public class TaskDaoTestSuite {
         taskDao.save(task);
         int id = task.getId();
         //Then
-        Assert.assertEquals(0,id);
+        Assert.assertNotEquals(0,id);
         //CleanUp
-        //taskDao.delete(id);
+        taskDao.delete(id);
     }
 }

@@ -64,15 +64,15 @@ public class ForumTestSuite {
         ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
-        ForumComment theComment = new ForumComment(thePost, "Thank you for all good words!",
-                "mrsmith");
+        ForumComment theComment = new ForumComment(thePost, "mrsmith",
+                "Thank you for all good words!");
         forumUser.addComment(thePost, theComment.getAuthor(),theComment.getCommentBody());
 
         //When
         ForumComment retrievedComment = forumUser.getComment(0);
 
         //Then
-        Assert.assertEquals(theComment, retrievedComment);
+        Assert.assertEquals(theComment.getCommentBody(), retrievedComment.getCommentBody());
     }
     @Test
     public void testRemovePostNotExisting(){
