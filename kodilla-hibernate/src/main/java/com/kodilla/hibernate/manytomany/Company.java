@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.firstThreeChar",
+        name = "Company.findCompaniesByPartialName",
         query = " SELECT * FROM COMPANIES" +
-                " WHERE company_name LIKE 'Sam%'",
+                " WHERE COMPANY_NAME LIKE :prefix||'%' ",
         resultClass = Company.class
 )
 
@@ -28,7 +28,6 @@ public class Company {
     }
 
     public Company(String name) {
-        this.id = id;
         this.name = name;
     }
     @Id
@@ -43,4 +42,5 @@ public class Company {
     public void setId(int id) { this.id = id; }
 
     public void setName(String name) { this.name = name; }
+
 }

@@ -93,35 +93,28 @@ public class CompanyDaoTestSuite {
 
         }
     }
+
     @Test
-    public void testCompanyThreeFirstChar(){
+    public void testLikeCompany() {
         //Given
+        Company panasonic = new Company("Samasonic");
         Company samsung = new Company("Samsung");
-        Company panasonic = new Company("Panasonic");
-        Company nokia = new Company("Nokia");
-        Company motorolla = new Company("Motorolla");
-        Company tamszung = new Company("Samszung");
+        Company motorola = new Company("Motorola");
 
         companyDao.save(samsung);
         companyDao.save(panasonic);
-        companyDao.save(nokia);
-        companyDao.save(motorolla);
-        companyDao.save(tamszung);
-
+        companyDao.save(motorola);
         //When
-        List<Company> retrieveThreeChar = companyDao.firstThreeChar();
+        List<Company> likeCompany = companyDao.findCompaniesByPartialName("Sam%");
         //Then
-        Assert.assertEquals(2,retrieveThreeChar.size());
+        Assert.assertEquals(2, likeCompany.size());
+        Assert.assertEquals("Samsung", likeCompany.get(0).getName());
         //CleanUp
         try {
-            companyDao.delete(samsung);
             companyDao.delete(panasonic);
-            companyDao.delete(nokia);
-            companyDao.delete(motorolla);
-            companyDao.delete(tamszung);
-        } catch (Exception e){
+            companyDao.delete(samsung);
+        } catch (Exception e) {
 
         }
     }
-
 }
