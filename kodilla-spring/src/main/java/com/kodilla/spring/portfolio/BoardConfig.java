@@ -1,6 +1,5 @@
 package com.kodilla.spring.portfolio;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -10,20 +9,31 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class BoardConfig {
     @Autowired
-    @Qualifier("list1")
-    Board board;
-
+    @Qualifier("ToDoList")
+    TaskList taskList;
 
     @Bean
     public Board getBoard(){
-        return new Board("list1","list2","list3");
+        return new Board(taskList,taskList,taskList);
     }
 
-    @Bean(name ="list1")
+    @Bean(name="ToDoList")
     @Scope("prototype")
-    public TaskList getList (){
+    public  TaskList getListToDoList(){
         return new TaskList();
     }
 
+    @Bean(name = "InProgress")
+    @Scope("prototype")
+    public TaskList getInProgress(){
+        return new TaskList();
+    }
 
+    @Bean(name = "DoneList")
+    @Scope("prototype")
+    public TaskList doneList(){
+        return new TaskList();
+    }
 }
+/* Napisz klasę konfigurującą Beany o nazwie BoardConfig, która utworzy trzy różne Beany reprezentujące listy
+        zadań i wstrzyknie je do Beana klasy Board.*/
