@@ -11,8 +11,10 @@ public class BoardConfig {
     @Autowired
     @Qualifier("ToDoList")
     TaskList taskList1;
+    @Autowired
     @Qualifier("InProgress")
     TaskList taskList2;
+    @Autowired
     @Qualifier("DoneList")
     TaskList taskList3;
 
