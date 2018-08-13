@@ -13,19 +13,19 @@ public class BoardConfig {
     TaskList taskList;
 
     @Bean
-    public Board getBoard(){
-        return new Board(taskList,taskList,taskList);
+    public Board board(){
+        return new Board(toDoList(),inProgress(),doneList());
     }
 
     @Bean(name="ToDoList")
     @Scope("prototype")
-    public  TaskList getListToDoList(){
+    public  TaskList toDoList(){
         return new TaskList();
     }
 
     @Bean(name = "InProgress")
     @Scope("prototype")
-    public TaskList getInProgress(){
+    public TaskList inProgress(){
         return new TaskList();
     }
 

@@ -10,16 +10,17 @@ public class Board {
         this.inProgressList = inProgressList;
         this.doneList = doneList;
     }
-    public void toDoList(){
-        System.out.println("The List(toDoList): " + toDoList.getTasks());
+
+    public TaskList getToDoList() {
+        return toDoList;
     }
 
-    public void inProgressList(){
-        System.out.println("The List(inProgressList): " + inProgressList.getTasks());
+    public TaskList getInProgressList() {
+        return inProgressList;
     }
 
-    public void doneList(){
-        System.out.println("The List: " + doneList.getTasks());
+    public TaskList getDoneList() {
+        return doneList;
     }
 }
     /*Utwórz w katalogu src/main/java pakiet com.kodilla.spring.portfolio, a w nim klasę Board posiadającą trzy pola:

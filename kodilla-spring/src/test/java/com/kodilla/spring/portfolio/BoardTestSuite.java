@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-
-
 public class BoardTestSuite {
     @Test
     public void testTaskAdd(){
@@ -17,12 +15,10 @@ public class BoardTestSuite {
         board.toDoList.tasks.add("To do list");
         board.inProgressList.tasks.add("In Progress");
         board.doneList.tasks.add("Done list");
-
         //Then
-        board.toDoList();
-        board.inProgressList();
-        board.doneList();
-
+        board.getToDoList();
+        board.getInProgressList();
+        board.getDoneList();
     }
 }
 /*
