@@ -40,5 +40,3 @@ public class BoardConfig {
         return new TaskList();
     }
 }
-/* Napisz klasę konfigurującą Beany o nazwie BoardConfig, która utworzy trzy różne Beany reprezentujące listy
-        zadań i wstrzyknie je do Beana klasy Board.*/

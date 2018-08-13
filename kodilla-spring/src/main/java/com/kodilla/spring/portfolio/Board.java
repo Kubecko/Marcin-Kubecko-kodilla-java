@@ -23,6 +23,3 @@ public class Board {
         System.out.println("doneList: "+ doneList.getTasks());
     }
 }
-    /*Utwórz w katalogu src/main/java pakiet com.kodilla.spring.portfolio, a w nim klasę Board posiadającą trzy pola:
-        toDoList, inProgressList oraz doneList.
-        Pola te powinny być typu TaskList.*/

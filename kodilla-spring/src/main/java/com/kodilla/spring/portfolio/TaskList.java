@@ -14,7 +14,3 @@ public class TaskList {
         return tasks;
     }
 }
-/*
-        Utwórz również klasę TaskList w tym samym pakiecie - powinna ona zawierać
-        właściwość List<String> tasks. Jej zawartość powinna być inicjowana w konstruktorze przy pomocy polecenia
-        tasks = new ArrayList<>();*/
