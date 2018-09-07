@@ -4,11 +4,19 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @NamedQuery(
         name = "Employee.retrieveThatLastName",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
+@NamedNativeQuery(
+        name = "Employee.findByAnyName",
+        query = "SELECT * FROM EMPLOYEES" +
+                " WHERE FIRSTNAME OR LASTNAME LIKE CONCAT('%',:ANYNAME,'%')",
+        resultClass = Employee.class
+)
+
 @Entity
 @Table(name= "EMPLOYEES")
 public class Employee {
@@ -52,4 +60,18 @@ public class Employee {
     private void setFirstname(String firstname) { this.firstname = firstname; }
 
     private void setLastname(String lastname) { this.lastname = lastname; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(firstname, employee.firstname) &&
+                Objects.equals(lastname, employee.lastname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname);
+    }
 }

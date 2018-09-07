@@ -9,10 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Transactional
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
@@ -105,7 +106,7 @@ public class CompanyDaoTestSuite {
         companyDao.save(panasonic);
         companyDao.save(motorola);
         //When
-        List<Company> likeCompany = companyDao.findCompaniesByPartialName("Sam%");
+        List<Company> likeCompany = companyDao.findCompaniesByPartialName("Sam");
         //Then
         Assert.assertEquals(2, likeCompany.size());
         Assert.assertEquals("Samsung", likeCompany.get(0).getName());
