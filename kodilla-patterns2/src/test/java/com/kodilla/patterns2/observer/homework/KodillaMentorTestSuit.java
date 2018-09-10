@@ -10,7 +10,7 @@ public class KodillaMentorTestSuit {
         //Given
         TaskQueue martin = new Martin();
         TaskQueue andre = new Andre();
-        Mentor paweł = new Mentor("Paweł Pluta");
+        Mentor paweł = new Mentor("Paweł Zieliarski");
         Mentor kowalski = new Mentor("Jan Kowalski");
         martin.registerObserverTask(paweł);
         andre.registerObserverTask(kowalski);
