@@ -27,12 +27,16 @@ public class SalaryAdapterTestSuite {
     public void testTest() {
         //Given
         Set<Book> bookPyM = new HashSet<>();
-            bookPyM.add(new Book("Marcin", "Kubecko", 1896, "1"));
+            bookPyM.add(new Book("User0", "Name0", 2000, "1"));
+            bookPyM.add(new Book("User1", "Name1", 2012, "2"));
+            bookPyM.add(new Book("User2", "Name2", 2002, "3"));
+            bookPyM.add(new Book("User3", "Name3", 2009, "4"));
+
         MedianAdapter medianAdapter = new MedianAdapter();
         //When
         int transform = medianAdapter.publicationYearMedian(bookPyM);
         //Then
         System.out.println(transform);
-        assertEquals(1896, transform);
+        assertEquals(2009, transform);
     }
 }
