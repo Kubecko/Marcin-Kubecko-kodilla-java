@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns2.observer.homework.KodillaMentorTestSuit" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-09-28T15:16:38" hostname="Bartoszek" time="0.011">
+  <properties/>
+  <testcase name="testMentorTask" classname="com.kodilla.patterns2.observer.homework.KodillaMentorTestSuit" time="0.011"/>
+  <system-out><![CDATA[Paweł Zieliarski New task in queue Observer Pattern
+ (total: 1 tasks
+Jan Kowalski New task in queue Observer Pattern
+ (total: 1 tasks
+Paweł Zieliarski New task in queue Observer Pattern
+ (total: 2 tasks
+Jan Kowalski New task in queue Observer Pattern
+ (total: 2 tasks
+Jan Kowalski New task in queue Facade pattern 
+ (total: 1 tasks
+Jan Kowalski New task in queue Facade pattern 
+ (total: 2 tasks
+Jan Kowalski New task in queue Facade pattern 
+ (total: 3 tasks
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

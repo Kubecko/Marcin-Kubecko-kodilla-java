@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns2.ShopServiceTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-09-28T15:16:38" hostname="Bartoszek" time="0.073">
+  <properties/>
+  <testcase name="testShopServiceSubmitOrder" classname="com.kodilla.patterns2.ShopServiceTestSuite" time="0.006"/>
+  <testcase name="testShopFacade" classname="com.kodilla.patterns2.ShopServiceTestSuite" time="0.047"/>
+  <system-out><![CDATA[2018-09-28 17:16:38.528  INFO 12672 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kodilla.patterns2.ShopServiceTestSuite], using SpringBootContextLoader
+2018-09-28 17:16:38.533  INFO 12672 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.kodilla.patterns2.ShopServiceTestSuite]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-09-28 17:16:38.534  INFO 12672 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kodilla.patterns2.ShopServiceTestSuite]: ShopServiceTestSuite does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-09-28 17:16:38.540  INFO 12672 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kodilla.patterns2.KodillaPatterns2Application for test class com.kodilla.patterns2.ShopServiceTestSuite
+2018-09-28 17:16:38.546  INFO 12672 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-09-28 17:16:38.550  INFO 12672 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@27f7d252, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6477140a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4ddee42c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7d62e63c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@649ede80, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3895415d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2d02de7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@68697887, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7a91d1d4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@681ce872]
+Registering new order, ID: -1
+Access denied. User is not authenticated.
+2018-09-28 17:16:38.596  INFO 12672 --- [    Test worker] c.k.p.facade.api.WatcherProcessOrder     : Logging the event
+2018-09-28 17:16:38.621 ERROR 12672 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Registering new order , ID: 1
+2018-09-28 17:16:38.621  INFO 12672 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 10, 2.0 pcs
+2018-09-28 17:16:38.626  INFO 12672 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 216, 1.0 pcs
+2018-09-28 17:16:38.628  INFO 12672 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 25, 1.0 pcs
+2018-09-28 17:16:38.628  INFO 12672 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Adding item 11, 3.0 pcs
+2018-09-28 17:16:38.629  INFO 12672 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Order value is: 2605 USD
+2018-09-28 17:16:38.630  INFO 12672 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Payment was rejected
+2018-09-28 17:16:38.631  INFO 12672 --- [    Test worker] c.k.patterns2.facade.api.OrderFacade     : Cancelling order 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

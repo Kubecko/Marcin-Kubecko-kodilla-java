@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns2.decorator.taxiportal.pizza.PizzaOrderTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-09-28T15:16:38" hostname="Bartoszek" time="0.024">
+  <properties/>
+  <testcase name="testBasicPizzaCost" classname="com.kodilla.patterns2.decorator.taxiportal.pizza.PizzaOrderTestSuite" time="0.001"/>
+  <testcase name="testPizzaDoubleCakeCost" classname="com.kodilla.patterns2.decorator.taxiportal.pizza.PizzaOrderTestSuite" time="0.002"/>
+  <testcase name="testPizzaDoubleCakeDescription" classname="com.kodilla.patterns2.decorator.taxiportal.pizza.PizzaOrderTestSuite" time="0.0"/>
+  <testcase name="testPizzaFullOptionsCost" classname="com.kodilla.patterns2.decorator.taxiportal.pizza.PizzaOrderTestSuite" time="0.009"/>
+  <testcase name="testPizzaFullOptionsDescription" classname="com.kodilla.patterns2.decorator.taxiportal.pizza.PizzaOrderTestSuite" time="0.003"/>
+  <testcase name="testBasicPizzaDescription" classname="com.kodilla.patterns2.decorator.taxiportal.pizza.PizzaOrderTestSuite" time="0.003"/>
+  <system-out><![CDATA[39
+Basic pizza on a double size with double cake + Vegetables rainbow and home delivery in our city
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
