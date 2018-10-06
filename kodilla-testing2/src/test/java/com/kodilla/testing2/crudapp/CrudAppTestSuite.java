@@ -4,9 +4,7 @@ import com.kodilla.testing2.config.WebDriverConfig;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.Random;
@@ -53,7 +51,7 @@ public class CrudAppTestSuite {
     private void sendTestTaskToTrello(String taskName) throws InterruptedException {
         driver.navigate().refresh();
 
-        while(!driver.findElement(By.xpath("//select[1]")).isDisplayed());
+        while(!driver.findElement(By.xpath(".//select[1]")).isDisplayed());
 
         driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
                 .filter(anyForm ->
@@ -69,11 +67,19 @@ public class CrudAppTestSuite {
                     buttonCreateCard.click();
                 });
         Thread.sleep(5000);
+        try {
+            driver.get("http://www.trello.com");
+        } catch (UnhandledAlertException e){
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+
     }
 
     private boolean checkTaskExistInTrello(String taskName) throws InterruptedException{
         final String TRELLO_URL = "https://trello.com/login";
         boolean result = false;
+
         WebDriver driverTrello = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
         driverTrello.get(TRELLO_URL);
 
@@ -83,7 +89,7 @@ public class CrudAppTestSuite {
 
         Thread.sleep(2000);
 
-        driverTrello.findElements(By.xpath("//a[@class=\"board-title\"]")).stream()
+        driverTrello.findElements(By.xpath("//a[@class=\"board-tile-fade\"]")).stream()
                 .filter(aHref -> aHref.findElements(By.xpath(".//span[@title=\"Kodilla Application\"]")).size() > 0)
                 .forEach(aHref -> aHref.click());
 
