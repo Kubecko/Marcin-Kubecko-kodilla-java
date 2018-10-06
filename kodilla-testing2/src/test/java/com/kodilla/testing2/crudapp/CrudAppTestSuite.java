@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import static org.junit.Assert.assertTrue;
+
 public class CrudAppTestSuite {
     private WebDriver driver;
     private final static String BASE_URL = "http://kubecko.github.io";
@@ -111,8 +113,8 @@ public class CrudAppTestSuite {
     @Test
     public void shouldCreateTrelloCard() throws InterruptedException {
         String taskName = createCrudAppTestTask();
-        //sendTestTaskToTrello(taskName);
+        sendTestTaskToTrello(taskName);
         deleteTaskFromCrudApp(taskName);
-        //assertTrue(checkTaskExistInTrello(taskName));
+        assertTrue(checkTaskExistInTrello(taskName));
     }
 }
