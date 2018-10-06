@@ -15,7 +15,6 @@ public class FacebookTestingApp {
             "//form[contains(@action, \"https://m.facebook.com/reg/\")]//div[contains(@class, \"_5k_5\")]//span/select[1]";
     public static final String XPATH_SELECT_MONTH =
             "//form[contains(@action, \"https://m.facebook.com/reg/\")]//div[contains(@class, \"_5k_5\")]//span/select[2]";
-
     public static final String XPATH_SELECT_YEAR =
             "//form[contains(@action, \"https://m.facebook.com/reg/\")]//div[contains(@class, \"_5k_5\")]//span/select[3]";
 
