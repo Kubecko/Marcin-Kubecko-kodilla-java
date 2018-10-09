@@ -108,8 +108,8 @@ public class CrudAppTestSuite {
     private void deleteTaskFromCrudApp(String taskName) throws InterruptedException{
         final String XPATH_FORMS =
                 "//form[@class= \"datatable__row\"]";
-        final String XPATH_VALUE_TASK = "//p[@class= \"datatable__field-value\"]";
-        final String XPATH_DELETE = "//div[@class= \"datatable__row-section-wrapper\"]//button[4]";
+        final String XPATH_VALUE_TASK = ".//p[@class= \"datatable__field-value\"]";
+        final String XPATH_DELETE = ".//div[@class= \"datatable__row-section-wrapper\"]//button[4]";
 
         driver.findElements(By.xpath(XPATH_FORMS)).stream()
             .filter(taskValue -> taskValue.findElement(By.xpath(XPATH_VALUE_TASK)).getText().equals(taskName))
