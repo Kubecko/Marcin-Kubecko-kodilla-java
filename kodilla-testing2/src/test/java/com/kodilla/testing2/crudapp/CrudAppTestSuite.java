@@ -60,20 +60,20 @@ public class CrudAppTestSuite {
                 .forEach(theForm -> {
                     WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));
                             Select select = new Select(selectElement);
-                    select.selectByIndex(1);
+                    select.selectByIndex(2);
 
                     WebElement buttonCreateCard =
                             theForm.findElement(By.xpath(".//button[contains(@class, \"card-creation\")]"));
                     buttonCreateCard.click();
                 });
         Thread.sleep(5000);
-        try {
-            driver.get("http://www.trello.com");
-        } catch (UnhandledAlertException e){
-            Alert alert = driver.switchTo().alert();
-            alert.accept();
-        }
-
+//        try {
+//            driver.get("http://www.trello.com");
+//        } catch (UnhandledAlertException e){
+//            Alert alert = driver.switchTo().alert();
+//            alert.accept();
+//        }
+        driver.switchTo().alert().accept();
     }
 
     private boolean checkTaskExistInTrello(String taskName) throws InterruptedException{
@@ -87,15 +87,15 @@ public class CrudAppTestSuite {
         driverTrello.findElement(By.id("password")).sendKeys("hibernatus858");
         driverTrello.findElement(By.id("login")).submit();
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
-        driverTrello.findElements(By.xpath("//a[@class=\"board-tile-fade\"]")).stream()
-                .filter(aHref -> aHref.findElements(By.xpath(".//span[@title=\"Kodilla Application\"]")).size() > 0)
+        driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
+                .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Tablica bez nazwy\"]")).size() > 0)
                 .forEach(aHref -> aHref.click());
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
-        result = driverTrello.findElements(By.xpath("//span")).stream()
+        result = driverTrello.findElements(By.xpath("//span[@class=\"list-card-title js-card-name\"]")).stream()
                 .filter(theSpan -> theSpan.getText().contains(taskName))
                 .collect(Collectors.toList())
                 .size() > 0;
@@ -106,13 +106,18 @@ public class CrudAppTestSuite {
     }
 
     private void deleteTaskFromCrudApp(String taskName) throws InterruptedException{
-        final String XPATH_DELETE_BUTTON =
-                "//form[@class= \"datatable__row\"]//div[@class= \"datatable__row-section-wrapper\"]//button[4]";
+        final String XPATH_FORMS =
+                "//form[@class= \"datatable__row\"]";
+        final String XPATH_VALUE_TASK = "//p[@class= \"datatable__field-value\"]";
+        final String XPATH_DELETE = "//div[@class= \"datatable__row-section-wrapper\"]//button[4]";
 
-        WebElement deleteTaskCrud = driver.findElement(By.xpath(XPATH_DELETE_BUTTON));
-        deleteTaskCrud.getAttribute(taskName);
+        driver.findElements(By.xpath(XPATH_FORMS)).stream()
+            .filter(taskValue -> taskValue.findElement(By.xpath(XPATH_VALUE_TASK)).getText().equals(taskName))
+                .forEach(deleteTask -> {
+                    WebElement buttonDelete = deleteTask.findElement(By.xpath(XPATH_DELETE));
+                    buttonDelete.click();
+                        });
 
-        deleteTaskCrud.click();
         Thread.sleep(2000);
     }
 
